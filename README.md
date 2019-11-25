@@ -11,8 +11,8 @@ None.
 Role Variables
 --------------
 
-`chronyd_service`: The name of the chronyd service, by default 'chronyd'.
-`list_of_ntp_servers`: A list of ntp servers.
+- `chronyd_service`: The name of the chronyd service, by default 'chronyd'.
+- `list_of_ntp_servers`: A list of ntp servers.
 
 Dependencies
 ------------
