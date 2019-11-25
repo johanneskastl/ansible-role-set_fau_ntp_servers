@@ -1,0 +1,9 @@
+---
+# /defaults/main.yml
+
+chronyd_service: 'chronyd'
+
+list_of_ntp_servers:
+  - 'ntp01.fau.de'
+  - 'ntp02.fau.de'
+  - 'ntp03.fau.de'

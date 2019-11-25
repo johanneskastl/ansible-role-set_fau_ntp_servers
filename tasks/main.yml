@@ -1,0 +1,19 @@
+---
+# set_fau_ntp_servers/tasks/main.yml
+
+- name: "Remove /etc/chrony.d/opensuse.conf"
+  file:
+    path: "/etc/chrony.d/opensuse.conf"
+    state: "absent"
+  notify:
+    - "restart chronyd"
+
+- name: "Create configuration file for chrony"
+  template:
+    src: "etc_chrony.d_fau_servers.conf.j2"
+    dest: "/etc/chrony.d/fau_servers.conf"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  notify:
+    - "restart chronyd"

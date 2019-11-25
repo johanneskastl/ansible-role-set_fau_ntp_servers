@@ -1,0 +1,3 @@
+{% for host in list_of_ntp_servers %}
+server {{ host }} iburst
+{% endfor%}

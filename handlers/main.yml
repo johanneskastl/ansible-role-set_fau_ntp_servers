@@ -1,0 +1,8 @@
+---
+# set_fau_ntp_servers/handlers/main.yml
+
+- name: "restart chronyd"
+  service:
+    name: "chronyd_service"
+    state: "restarted"
+    enabled: true
