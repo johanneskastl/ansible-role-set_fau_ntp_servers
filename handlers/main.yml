@@ -3,6 +3,6 @@
 
 - name: "restart chronyd"
   service:
-    name: "chronyd_service"
+    name: "{{ chronyd_service }}"
     state: "restarted"
     enabled: true
