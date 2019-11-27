@@ -23,3 +23,20 @@
   when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
   notify:
     - "restart chronyd"
+
+#
+# SLES12 with ntpd
+#
+- name: "Add FAU servers to ntp.conf"
+  lineinfile:
+    path: "/etc/ntp.conf"
+    regexp: "{{ item }}"
+    line: "server {{ item }} iburst"
+    owner: "root"
+    group: "ntp"
+    mode: '0640'
+  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version == "12"'
+  with_items:
+    - "{{ list_of_ntp_servers }}"
+  notify:
+    - "restart ntpd"
