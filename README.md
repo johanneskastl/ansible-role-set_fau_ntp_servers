@@ -11,7 +11,8 @@ None.
 Role Variables
 --------------
 
-- `chronyd_service`: The name of the chronyd service, by default 'chronyd'.
+- `chronyd_service`: The name of the chronyd service, by default 'chronyd' (only used on SLES15 or newer).
+- `ntpd_service`: The name of the ntpd service, by default 'ntpd' (only used on SLES12).
 - `list_of_ntp_servers`: A list of ntp servers.
 
 Dependencies
