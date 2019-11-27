@@ -3,6 +3,8 @@
 
 chronyd_service: 'chronyd'
 
+ntpd_service: 'ntpd'
+
 list_of_ntp_servers:
   - 'ntp1.fau.de'
   - 'ntp2.fau.de'
