@@ -1,10 +1,15 @@
 ---
 # set_fau_ntp_servers/tasks/main.yml
 
+#
+# SLES15 or newer with chronyd
+#
+
 - name: "Remove /etc/chrony.d/opensuse.conf"
   file:
     path: "/etc/chrony.d/opensuse.conf"
     state: "absent"
+  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
   notify:
     - "restart chronyd"
 
@@ -15,5 +20,6 @@
     owner: "root"
     group: "root"
     mode: "0644"
+  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
   notify:
     - "restart chronyd"
