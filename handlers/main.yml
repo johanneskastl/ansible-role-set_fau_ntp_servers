@@ -7,3 +7,10 @@
     state: "restarted"
     enabled: true
   when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
+
+- name: "restart ntpd"
+  service:
+    name: "{{ ntpd_service }}"
+    state: "restarted"
+    enabled: true
+  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version == "12"'
