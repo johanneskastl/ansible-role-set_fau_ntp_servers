@@ -6,3 +6,4 @@
     name: "{{ chronyd_service }}"
     state: "restarted"
     enabled: true
+  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
