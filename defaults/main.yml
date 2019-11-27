@@ -4,6 +4,7 @@
 chronyd_service: 'chronyd'
 
 list_of_ntp_servers:
-  - 'ntp01.fau.de'
-  - 'ntp02.fau.de'
-  - 'ntp03.fau.de'
+  - 'ntp1.fau.de'
+  - 'ntp2.fau.de'
+  - 'ntp3.fau.de'
+  - 'ntp4.fau.de'
