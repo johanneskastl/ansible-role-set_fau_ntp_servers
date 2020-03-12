@@ -9,7 +9,7 @@
   file:
     path: "/etc/chrony.d/opensuse.conf"
     state: "absent"
-  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
+  when: '(ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap") and ansible_distribution_major_version > "12"'
   notify:
     - "restart chronyd"
 
@@ -20,7 +20,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: 'ansible_distribution == "SLES" and ansible_distribution_major_version > "12"'
+  when: '(ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap") and ansible_distribution_major_version > "12"'
   notify:
     - "restart chronyd"
 
