@@ -29,7 +29,7 @@
 #
 # SLES12 with ntpd
 #
-- name: "Add FAU servers to ntp.conf"
+- name: "SLES12 only: Add FAU servers to ntp.conf"
   lineinfile:
     path: "/etc/ntp.conf"
     regexp: "{{ item }}"
