@@ -3,7 +3,7 @@
 set_fau_ntp_servers
 =========
 
-Use the fau ntp servers
+Use the ntp servers from Friedrich-Alexander-University Erlangen-Nuremberg (fau.de)
 
 Requirements
 ------------
