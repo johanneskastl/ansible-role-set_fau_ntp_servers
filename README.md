@@ -8,7 +8,7 @@ Use the ntp servers from Friedrich-Alexander-University Erlangen-Nuremberg (fau.
 Requirements
 ------------
 
-None.
+Chrony (SLES15) or ntpd (SLES12) need to be installed.
 
 Role Variables
 --------------
