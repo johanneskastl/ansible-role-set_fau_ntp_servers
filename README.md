@@ -27,7 +27,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: johanneskastl.set_fau_ntp_servers }
+         - { role: 'johanneskastl.set_fau_ntp_servers' }
 
 License
 -------
