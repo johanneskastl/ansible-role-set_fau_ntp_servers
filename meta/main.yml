@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'set_fau_ntp_servers'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Use the fau ntp servers'
   company: 'B1 Systems GmbH'
