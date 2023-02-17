@@ -2,14 +2,14 @@
 # set_fau_ntp_servers/handlers/main.yml
 
 - name: "restart chronyd"
-  service:
+  ansible.builtin.service:
     name: "{{ chronyd_service }}"
     state: "restarted"
     enabled: true
   when: '(ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap") and ansible_distribution_major_version > "12"'
 
 - name: "restart ntpd"
-  service:
+  ansible.builtin.service:
     name: "{{ ntpd_service }}"
     state: "restarted"
     enabled: true
