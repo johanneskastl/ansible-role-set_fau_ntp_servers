@@ -9,7 +9,7 @@
   ansible.builtin.file:
     path: '/etc/chrony.d/opensuse.conf'
     state: 'absent'
-  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version > "12")
+  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
         or ansible_distribution == "openSUSE MicroOS"'
   notify:
     - 'Restart chronyd'
@@ -21,7 +21,7 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version > "12")
+  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
         or ansible_distribution == "openSUSE MicroOS"'
   notify:
     - 'Restart chronyd'
@@ -39,7 +39,7 @@
     mode: '0640'
   when:
     - 'ansible_distribution == "SLES"'
-    - 'ansible_distribution_major_version == "12"'
+    - 'ansible_distribution_major_version | int == 12'
   with_items:
     - "{{ list_of_ntp_servers }}"
   notify:
