@@ -8,7 +8,7 @@ Use the ntp servers from Friedrich-Alexander-University Erlangen-Nuremberg (fau.
 Requirements
 ------------
 
-Chrony (SLES15, openSUSE Leap 15.x) or ntpd (SLES12) need to be installed.
+Chrony (SLES15, openSUSE Leap 15.x, openSUSE MicroOS or openSUSE Leap Micro) or ntpd (SLES12) need to be installed.
 
 Role Variables
 --------------
@@ -27,7 +27,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.set_fau_ntp_servers' }
+         - role: 'johanneskastl.set_fau_ntp_servers'
 
 License
 -------
