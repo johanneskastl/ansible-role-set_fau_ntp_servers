@@ -9,8 +9,11 @@
   ansible.builtin.file:
     path: '/etc/chrony.d/opensuse.conf'
     state: 'absent'
-  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
-        or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - '
+      (ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
+      or ansible_distribution == "openSUSE MicroOS"
+      '
   notify:
     - 'Restart chronyd'
 
@@ -21,8 +24,11 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  when: '(ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
-        or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - '
+      (ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
+      or ansible_distribution == "openSUSE MicroOS"
+      '
   notify:
     - 'Restart chronyd'
 
