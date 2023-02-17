@@ -7,7 +7,8 @@
     state: 'restarted'
     enabled: true
   when:
-    - '(ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap") and ansible_distribution_major_version | int > 12'
+    - '(ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap")'
+    - 'ansible_distribution_major_version | int > 12'
 
 - name: 'Restart ntpd'
   ansible.builtin.service:
@@ -15,4 +16,5 @@
     state: 'restarted'
     enabled: true
   when:
-    - 'ansible_distribution == "SLES" and ansible_distribution_major_version | int == 12'
+    - 'ansible_distribution == "SLES"'
+    - 'ansible_distribution_major_version | int == 12'
