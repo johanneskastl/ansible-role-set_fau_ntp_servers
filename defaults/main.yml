@@ -1,5 +1,5 @@
 ---
-# /defaults/main.yml
+# set_fau_ntp_servers/defaults/main.yml
 
 chronyd_service: 'chronyd'
 
