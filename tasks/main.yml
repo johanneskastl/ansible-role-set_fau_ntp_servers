@@ -6,7 +6,7 @@
 #
 
 - name: "Remove /etc/chrony.d/opensuse.conf"
-  file:
+  ansible.builtin.file:
     path: "/etc/chrony.d/opensuse.conf"
     state: "absent"
   when: '((ansible_distribution == "SLES" or ansible_distribution == "openSUSE Leap") and ansible_distribution_major_version > "12")
@@ -15,7 +15,7 @@
     - "restart chronyd"
 
 - name: "Create configuration file for chrony"
-  template:
+  ansible.builtin.template:
     src: "etc_chrony.d_fau_servers.conf.j2"
     dest: "/etc/chrony.d/fau_servers.conf"
     owner: "root"
@@ -30,7 +30,7 @@
 # SLES12 with ntpd
 #
 - name: "SLES12 only: Add FAU servers to ntp.conf"
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "/etc/ntp.conf"
     regexp: "{{ item }}"
     line: "server {{ item }} iburst"
