@@ -21,4 +21,4 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - { role: 'install_chrony' }
+  - role: 'johanneskastl.install_chrony'
