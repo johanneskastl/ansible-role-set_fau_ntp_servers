@@ -13,6 +13,7 @@
     - '
       (ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
       or ansible_os_family == "openSUSE MicroOS"
+      or ansible_os_family == "openSUSE Leap Micro"
       '
   notify:
     - 'Restart chronyd'
@@ -28,6 +29,7 @@
     - '
       (ansible_os_family == "Suse" and ansible_distribution_major_version | int > 12)
       or ansible_os_family == "openSUSE MicroOS"
+      or ansible_os_family == "openSUSE Leap Micro"
       '
   notify:
     - 'Restart chronyd'
